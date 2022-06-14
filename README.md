@@ -112,7 +112,7 @@ inter_V1_1<-inter_V1_1 +  geom_text(data=data_long1_1, aes(x = Mobility_Interven
 
 inter_V1_1
 
-[all interventions1.csv](https://github.com/DelaTheAnalyst/Interventions/files/8901128/all.interventions1.csv)
+
 
 
 
