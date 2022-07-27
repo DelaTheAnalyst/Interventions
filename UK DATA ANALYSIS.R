@@ -1,3 +1,4 @@
+## Packages to be installed and Used 
 install.packages("ggrepel")
 install.packages("ddply")
 library(reshape2)
@@ -12,20 +13,22 @@ library(extrafont)
 library(plyr)
 library(ggrepel)
 
-#######################All interventions
-
+##All interventions
+##Importing the CSV Excel file 
 work7<-read.csv("C:/Users/DELALI/Desktop/Dr prosper/excels/all interventions1.csv")
 View(work7)
 
+##Categorising certain columns of the excel file into a table
 mytable7<-table(work7$What.has.been.your.adaption.plans.,work7$X2..If.you.have.the.interventions.in.place..indicate.how.they.were.designed.)
 mytable7_1<-table(work7$X9..Kindly.indicate.whether.you.intend.to.adapt.any.of.the.below.measure.to.address.the.effects.of.climate.change.on.you.or.your.family.s.access.to.energy..,work7$What.has.been.your.adaption.plans.)
 #view(mytable7)
 
+##Declaring the excel into a data frame matrix which helps group the columns of the table
 mydata7<-as.data.frame.matrix(mytable7)
 mydata7_1<-as.data.frame.matrix(mytable7_1)
 
 #view(mydata7)
-
+##Adding row names 
 mydata7$All_Interventions<-row.names(mydata7)
 mydata7_1$All_Interventions<-row.names(mydata7_1)
 
@@ -46,7 +49,7 @@ data_long7_1<- mydata7_1 %>%
 View(data_long7_1)
 
 
-
+##Extrapolating and Visualizing the data using the geom bar code 
 inter_V7<-ggplot() + geom_bar(aes(y= Responses,
                                   x = All_Interventions,
                                   fill = Adaptations),
@@ -112,7 +115,8 @@ inter_V1_1<-inter_V1_1 +  geom_text(data=data_long1_1, aes(x = Mobility_Interven
 inter_V1_1
 
 
-
+###The code above represents code for the data extrapolation and visualization of one intervention which can just be adjusted for other 
+##Interventions
 
 
 
